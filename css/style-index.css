@@ -1,0 +1,66 @@
+:root {
+    font-size: calc( 0.5em + 1vw);
+    color:black;
+    font-family: 'Didact Gothic', sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+#iniciar{
+    background-color: transparent;
+    border: #1F618D 1.5px solid;
+    color: #1F618D;
+    font-family: 'Didact Gothic', sans-serif;
+    border-radius: 20%;
+}
+
+label{
+    color: #1F618D;
+}
+
+body{
+    margin: 0%;
+    padding: 0;
+    background-color: #1F618D;
+}
+
+#logo{
+    height: 4em;
+}
+
+form{
+    align-self: center;
+}
+
+fieldset{
+    border-style: none;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.Content{
+    display: flex;
+    margin: 1em 3em 1em 3em;
+    background-color: #85C1E9;
+}
+
+.info{
+    padding: 1em;
+}
+
+footer{
+    margin: 0;
+    height: 5em;
+    background-color: #424949;
+}
+footer, p{
+    margin: 0;
+}
+
+#img-content{
+    height: 25em;
+}
