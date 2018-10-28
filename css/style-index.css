@@ -8,20 +8,22 @@
 
 #iniciar{
     background-color: transparent;
-    border: #1F618D 1.5px solid;
-    color: #1F618D;
+    border: #1F618D 3px solid;
+    color: rgb(255, 255, 255);
     font-family: 'Didact Gothic', sans-serif;
     border-radius: 20%;
+    font-size: calc( 0.2em + 1vw);
 }
 
 label{
-    color: #1F618D;
+    color: rgb(255, 255, 255);
 }
 
 body{
     margin: 0%;
     padding: 0;
-    background-color: #1F618D;
+    background-color: #292929;
+    
 }
 
 #logo{
@@ -39,15 +41,18 @@ fieldset{
 nav{
     display: flex;
     justify-content: space-between;
-    background-color: white;
+    
 }
 
 .Content{
     display: flex;
-    margin: 1em 3em 1em 3em;
-    background-color: #85C1E9;
+    background-color: rgba(2, 81, 134, 0.828);
+    margin: 0;
 }
-
+section{
+    height: 100%;
+    padding: 1em 3em 1em 3em;
+}
 .info{
     padding: 1em;
 }
@@ -55,10 +60,12 @@ nav{
 footer{
     margin: 0;
     height: 5em;
-    background-color: #424949;
+    background-color: rgb(22, 22, 22);
+   
 }
 footer, p{
     margin: 0;
+    color: white;
 }
 
 #img-content{
