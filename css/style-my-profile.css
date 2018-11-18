@@ -46,7 +46,7 @@ header{
 
 .Mi_espacio{
     display: grid;
-    grid-template-columns: 20% 100%;
+    grid-template-columns: 20% 80%;
     height: 80vh;
     background-color: rgba(175, 176, 177, 0.828);
 }
@@ -82,13 +82,22 @@ footer{
     background-color: rgb(22, 22, 22);
 }
 
-a{
-    text-decoration: none;
-    color: white;
-    padding-left: 5%;
-}
-
 nav{
     background-color: rgba(61, 61, 61, 0.828);
 }
 
+.menu_mis_archivos{
+    padding: 5%;
+    display: none;
+}
+
+#options_files, #options_trash, #options_desc{
+    color:white;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 1em;
+ }
+ 

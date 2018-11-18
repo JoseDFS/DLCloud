@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
     <link rel="stylesheet" href="../css/style-my-profile.css">
+    <script src="../js/script-my-profile.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <title>My profile</title>
 </head>
@@ -20,10 +21,13 @@
     <div class="Mi_espacio">
         <nav>
             <ul>
-                <li><i class="far fa-folder-open"></i><a href="#">Mis Archivos</a></li>
-                <li><i class="fas fa-certificate"></i><a href="#">Destacados</a></li>
-                <li><i class="fas fa-trash"></i><a href="#">Papelera</a></li>
+                <li><button id="options_files"><i class="far fa-folder-open"></i> Mis Archivos</button></li>
+                <li><button id="options_desc"><i class="fas fa-certificate"></i> Destacados</button></li>
+                <li><button id="options_trash"><i class="fas fa-trash"></i> Papelera</button></li>
             </ul>
+            <div class="menu_mis_archivos">
+                <input type="file" name="subir_archivo" id="subir_archivo">
+            </div>
         </nav>
         <div class="Content">
             <i class="far fa-times-circle"></i>
