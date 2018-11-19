@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    section
+        .formu
+            form(action='#' method='POST')
+                fieldset
+                    label(for='username') Username: 
+                    input#username(type='text' name='username' required='' placeholder='Your username')
+                    label(for='correo') Correo Electronico: 
+                    input#email(type='email' name='email' required='' placeholder='00000000@uca.edu.sv')
+                    label(for='contra') Contrase&ntilde;a: 
+                    input#password(type='password' name='password' required='' placeholder='Escribe tu contraseña')
+                    input#iniciar(type='submit' value='Iniciar')

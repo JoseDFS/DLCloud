@@ -4,4 +4,18 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style-index.css')
   body
+    nav
+      img#logo(src='images/DL-Cloud2.0 (Dark).png' alt='')
+      ul.nav.navbar-nav.navbar-right
+            if (!user)
+              li
+                a(href='/login') Login
+              li
+                a(href='/register') Register
+            if (user)
+              li
+                a#welcome Welcome #{user.username}
+              li
+                a(href='/logout') Logout
+
     block content
