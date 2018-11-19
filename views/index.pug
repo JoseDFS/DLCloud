@@ -1,6 +1,42 @@
 extends layout
 
 block content
+<<<<<<< HEAD
   
+=======
+  nav
+    img#logo(src='images/DL-Cloud2.0 (Dark).png' alt='')
+    form(action='#' method='POST')
+      fieldset
+        label(for='correo') Correo Electronico: 
+        input#correo(type='email' name='correo' required='' placeholder='00000000@uca.edu.sv')
+        label(for='contra') Contrase&ntilde;a: 
+        input#contra(type='password' name='contra' required='' placeholder='Escribe tu contraseña')
+        //
+          La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.
+          Puede tener otros símbolos.
+        input#iniciar(type='submit' value='Iniciar')
+  section
+    .Content
+      .registro
+        form#registro1(action='#' method='POST')
+          fieldset.registro2
+            h1 &iquest;No te has registrado?
+            label(for='nombre') Nombre: 
+            input#nombre_re(type='text' name='nombre' required='' placeholder='Jose David')
+            label(for='correo') Correo Electronico: 
+            input#correo_re(type='email' name='correo' required='' placeholder='00000000@uca.edu.sv')
+            label(for='contra') Password: 
+            input#contra_re(type='password' name='Password' required='' placeholder='Escribe tu contraseña' )
+            //
+              La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.
+              Puede tener otros símbolos.
+            input#Registrate(type='submit' value='Registrate')
+      .info
+        h1 La mejor manera de guardar todos tus archivos
+        p#dl
+          | DL Cloud te permite guardar tus archivos sin ningun problema, ya sea
+          | Documentos, PDF, Fotografias, Videos y mas!.
+>>>>>>> ff39147161a3fb1ad70030446708ee63f949f798
   footer
     p hola
