@@ -48,4 +48,13 @@ userController.logout = function(req, res) {
   res.redirect('/');
 };
 
+
+//go to upload page
+userController.upLoad = function(req,res){
+  res.render('upload', { user : req.user });
+}
+
+
+
+
 module.exports = userController;
