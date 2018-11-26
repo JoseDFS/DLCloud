@@ -10,7 +10,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var User = require('./models/User');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/dlcloudDB')
+mongoose.connect('mongodb://admin:aax9igcgnS9vhZU@ds259079.mlab.com:59079/pruebaproyecto')
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
 
