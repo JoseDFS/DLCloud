@@ -10,6 +10,9 @@ var LocalStrategy = require('passport-local').Strategy;
 var User = require('./models/User');
 
 mongoose.Promise = global.Promise;
+//aqui cambie la direccion en vez de que fuera local, puse lo que mlab me dio con el dbuser que yo cree
+//user:admin
+//contraseña:aax9igcgnS9vhZU
 mongoose.connect('mongodb://admin:aax9igcgnS9vhZU@ds259079.mlab.com:59079/pruebaproyecto')
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
