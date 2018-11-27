@@ -54,7 +54,10 @@ userController.upLoad = function(req,res){
   res.render('upload', { user : req.user });
 }
 
-
+//go to superadmin
+userController.adminSuper = function (req,res){
+  res.render('super',{user:req.user})
+}
 
 
 module.exports = userController;

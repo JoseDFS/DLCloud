@@ -23,4 +23,7 @@ router.get('/logout', auth.logout);
 //rout for upload page
 router.get('/upload',auth.upLoad);
 
+//rout for superadmin page
+router.get('/super',auth.adminSuper);
+
 module.exports = router;

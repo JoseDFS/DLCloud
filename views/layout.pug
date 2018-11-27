@@ -33,6 +33,7 @@ html
                 if (!user)
                   li
                     a(href='/login') Login
+                    
                   li
                     a(href='/register') Register
                 if (user)
@@ -40,8 +41,15 @@ html
                     a#welcome Welcome #{user.username}
                   li
                     a(href='/logout') Logout
-                  li
-                    a(href='/upload') Upload your files
+                  if(user.username!="admin")
+                    li
+                      a(href='/upload') Upload your files
+                  else
+                    li
+                      a(href='/super') Administrar
+                  
+                  
+                
   block content
   
 
