@@ -24,7 +24,7 @@ router.post('/login', auth.doLogin);
 router.get('/logout', auth.logout);
 
 //rout for upload page
-router.get('/upload',auth.upLoad);
+//router.get('/upload',auth.upLoad);
 
 //rout for superadmin page
 router.get('/super',auth.adminSuper);
@@ -32,47 +32,42 @@ router.get('/super',auth.adminSuper);
 router.get('/upload', function(req, res, next) {
 
     Documents.find({}, ['path','caption'], {sort:{ _id: -1} }, function(err, documents) {
-      res.render('index', { title: 'NodeJS file upload tutorial', msg:req.query.msg, documentsList : documents });
-      
+      res.render('upload', { msg:req.query.msg, documentsList : documents });
     });
   
   });
+
+router.post('/upload', function(req, res) {
   
-  /** Upload file to path and add record to database */
-  
-  router.post('/upload', function(req, res) {
-  
-    upload(req, res,(error) => {
-        if(error){
-           res.redirect('/?msg=3');
-        }else{
-          if(req.file == undefined){
-            
-            res.redirect('/?msg=2');
-  
-          }else{
-               
-              /**
-               * Create new record in mongoDB
-               */
-              var fullPath = "files/"+req.file.filename;
-  
-              var document = {
-                path:     fullPath, 
-                caption:   req.body.caption
-              };
+  upload(req, res,(error) => {
+       if(error){
+          res.redirect('/upload');
+       }else{
+         if(req.file == undefined){
+           console.log("Esta vacio");
+           res.redirect('/upload');
+ 
+         }else{
+
+             var fullPath = "files/"+req.file.filename;
+ 
+             var document = {
+               path:     fullPath, 
+               caption:   req.body.caption
+             };
     
-            var doc = new Documents(document); 
-            doc.save(function(error){
-              if(error){ 
-                throw error;
-              } 
-              res.redirect('/?msg=1');
-           });
-        }
-      }
-    });    
-  });
+           var doc = new Documents(document); 
+           doc.save(function(error){
+             if(error){ 
+               throw error;
+             } 
+             console.log("Se a guardado");
+             res.redirect('/upload');
+          });
+       }
+     }
+   });    
+ });
   
 
 module.exports = router;
