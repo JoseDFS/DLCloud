@@ -3,8 +3,7 @@ var router = express.Router();
 var auth = require("../controllers/AuthController.js");
 var upload    = require('./upload');
 var mongoose  = require('mongoose');
-var Documents = mongoose.model('Documents');
-
+var Photo     = mongoose.model('Photos');
 // restrict index for logged in user only
 router.get('/', auth.home);
 
@@ -31,43 +30,47 @@ router.get('/super',auth.adminSuper);
 
 router.get('/upload', function(req, res, next) {
 
-    Documents.find({}, ['path','caption'], {sort:{ _id: -1} }, function(err, documents) {
-      res.render('upload', { msg:req.query.msg, documentsList : documents });
-    });
-  
+  Photo.find({}, ['path','caption'], {sort:{ _id: -1} }, function(err, photos) {
+    res.render('upload', { title: 'NodeJS file upload tutorial', msg:req.query.msg, photolist : photos });
+    
   });
 
-router.post('/upload', function(req, res) {
-  
-  upload(req, res,(error) => {
-       if(error){
-          res.redirect('/upload');
-       }else{
-         if(req.file == undefined){
-           console.log("Esta vacio");
-           res.redirect('/upload');
- 
-         }else{
+});
 
-             var fullPath = "files/"+req.file.filename;
- 
-             var document = {
-               path:     fullPath, 
-               caption:   req.body.caption
-             };
-    
-           var doc = new Documents(document); 
-           doc.save(function(error){
-             if(error){ 
-               throw error;
-             } 
-             console.log("Se a guardado");
-             res.redirect('/upload');
-          });
-       }
-     }
-   });    
- });
+/** Upload file to path and add record to database */
+
+router.post('/upload', function(req, res) {
+
+  upload(req, res,(error) => {
+      if(error){
+         res.redirect('/upload/?msg=3');
+      }else{
+        if(req.file == undefined){
+          
+          res.redirect('/upload/?msg=2');
+
+        }else{
+             
+            /**
+             * Create new record in mongoDB
+             */
+            var fullPath = "files/"+req.file.filename;
+
+            var document = {
+              path:     fullPath, 
+              caption:   req.body.caption
+            };
   
+          var photo = new Photo(document); 
+          photo.save(function(error){
+            if(error){ 
+              throw error;
+            } 
+            res.redirect('/upload/?msg=1');
+         });
+      }
+    }
+  });    
+});
 
 module.exports = router;

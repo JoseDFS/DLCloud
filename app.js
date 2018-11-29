@@ -15,7 +15,7 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://admin:aax9igcgnS9vhZU@ds259079.mlab.com:59079/pruebaproyecto')
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
-require("./models/Documents");
+require("./models/Photo");
 
 var index = require('./routes/index');
 var users = require('./routes/users');
