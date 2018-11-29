@@ -28,7 +28,7 @@ router.get('/logout', auth.logout);
 //rout for superadmin page
 router.get('/super',auth.adminSuper);
 
-router.get('/upload', function(req, res, next) {
+router.get('/upload/', function(req, res, next) {
 
   Photo.find({}, ['path','caption'], {sort:{ _id: -1} }, function(err, photos) {
     res.render('upload', { title: 'NodeJS file upload tutorial', msg:req.query.msg, photolist : photos });
@@ -39,7 +39,7 @@ router.get('/upload', function(req, res, next) {
 
 /** Upload file to path and add record to database */
 
-router.post('/upload', function(req, res) {
+router.post('/upload/', function(req, res) {
 
   upload(req, res,(error) => {
       if(error){
