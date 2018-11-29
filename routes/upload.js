@@ -17,11 +17,7 @@ const upload =  multer({
   fileFilter: function(req, file, callback){
     validateFile(file, callback);
   }
-<<<<<<< HEAD
 }).single('photo');
-=======
-}).single('document');
->>>>>>> 16adc6769fc6640e6f69fc813527e5d777e66592
 
 
 var validateFile = function(file, cb ){
