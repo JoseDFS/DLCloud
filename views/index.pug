@@ -2,21 +2,28 @@ extends layout
 
 block content
     .container
-      if photolist.length
-        | <div class="row">
-        each pic, index in photolist
-          |<div class ="col s3"><img src = #{pic['path']} alt="image" class="responsive-img" /><p class="center-align caption">#{pic['caption']}</p></div> 
-          if (((index+1) % 4) == 0 )
-           </div><div class="row">
+      if(!user)
+        .portada
+          .info
+              h1 La mejor manera de guardar todos tus archivos
+              p#dl
+                | DL Cloud te permite guardar tus archivos sin ningun problema, ya sea
+                | Documentos, PDF, Fotografias, Videos y mas!.
+          .fondo
+              img(src="/images/foto7.jpg", alt="", srcset="", id = "fotop")
       else
-        .row
-          .col.s12
-            .caption No photos uploaded yet.
-    .info
-        h1 La mejor manera de guardar todos tus archivos
-        p#dl
-          | DL Cloud te permite guardar tus archivos sin ningun problema, ya sea
-          | Documentos, PDF, Fotografias, Videos y mas!.
+        if photolist.length
+          | <div class="row">
+          each pic, index in photolist
+            |<div class ="col s3"><img src = #{pic['path']} alt="image" class="responsive-img" /><p class="center-align caption">#{pic['caption']}</p></div> 
+            if (((index+1) % 4) == 0 )
+            </div><div class="row">
+        else
+          .row
+            .col.s12
+              .caption No photos uploaded yet.
+    
+
      
     script(src='https://code.jquery.com/jquery-3.3.1.min.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js')

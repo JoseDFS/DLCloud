@@ -1,0 +1,38 @@
+.inner{
+    display: flex;
+    justify-content: space-between;
+}
+
+.hola{
+    display: inherit;
+    width: 17vw;
+    justify-content: space-around;
+}
+
+#logo{
+    height: 50px;
+}
+
+.portada{
+    margin-top: 3%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: 75vh;
+}
+
+#fotop{
+    height: 100%;
+    width: 100%;
+}
+
+.info{
+    font-family: 'Signika Negative', sans-serif;
+    padding: 5%;
+    background-color: rgba(141, 141, 141, 0.5);
+
+}
+
+#dl{
+    font-size: 1.5em;
+
+}
