@@ -2,12 +2,15 @@
 var mongoose = require("mongoose");
 var passport = require("passport");
 var User = require("../models/User");
-
+var Photo     = mongoose.model('Photos');
 var AuthController = {};
 
 // Restrict access to root page
 AuthController.home = function(req, res) {
-  res.render('index', { user : req.user });
+  Photo.find({}, ['path','caption'], {sort:{ _id: -1} }, function(err, photos) {
+        res.render('index', { user:req.user, msg:req.query.msg, photolist : photos });
+    });
+
 };
 
 // Go to registration page
