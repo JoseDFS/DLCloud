@@ -5,7 +5,8 @@ html
 
    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css')
    link(rel='stylesheet', href='/stylesheets/style.css')
-  
+   link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.5.0/css/all.css", integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" ,crossorigin="anonymous")
+   link(href="https://fonts.googleapis.com/css?family=Raleway" ,rel="stylesheet")
    meta(name='viewport', content='width=device-width, initial-scale=1.0')
 
    title Upload to DLCloud
@@ -15,11 +16,16 @@ html
       .container
         .row
         .col.s12
-            nav(style="background-color: #C62705")
+            nav 
+              .logo
+                img(src="/images/DL-Cloud2_opt.png", alt="", id="logo") 
+              .up
+                p#h Upload your files
+              
             x.nav-wrapper
               span.flow-text 
-              | &nbsp; Upload your files
-              a(href='/') HOME
+              a(href='/', id = "home") 
+                i(class="fas fa-home")  GO HOME
 
         
         form(action='#' method="POST" enctype="multipart/form-data")
