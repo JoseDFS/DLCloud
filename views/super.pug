@@ -3,7 +3,7 @@ extends layout
 block content
   if(!user || user._id != '5c00b810db4fa92316f942a5')
 
-    h1 Usuario pobre
+    h1 Usuario no autorizado
     a(href="/", id= "home") GO HOME
   else
     .errors
