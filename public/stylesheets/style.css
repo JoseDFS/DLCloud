@@ -1,6 +1,7 @@
 body {
     padding: 50px;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-color: rgb(122, 115, 115);
   }
   
   body{
@@ -26,7 +27,7 @@ body {
     }
   
     .caption{
-      color: grey;
+      color: rgb(255, 255, 255);
       font-family: Arial, Helvetica, sans-serif;
       font-size: 12px;
     }
