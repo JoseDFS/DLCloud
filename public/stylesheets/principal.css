@@ -13,7 +13,11 @@
     margin-top: 3%;
     display: grid;
     grid-template-columns: 50% 50%;
-    height: 75vh;
+    height: 73vh;
+}
+
+.container{
+    width: 88vw;
 }
 
 #fotop{
