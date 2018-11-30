@@ -39,38 +39,6 @@ router.get('/upload/', function(req, res, next) {
 
 /** Upload file to path and add record to database */
 
-router.post('/upload/', function(req, res) {
-
-  upload(req, res,(error) => {
-      if(error){
-         res.redirect('/upload');
-      }else{
-        if(req.file == undefined){
-          
-          res.redirect('/upload');
-
-        }else{
-             
-            /**
-             * Create new record in mongoDB
-             */
-            var fullPath = "files/"+req.file.filename;
-
-            var document = {
-              path:     fullPath, 
-              caption:   req.body.caption
-            };
-  
-          var photo = new Photo(document); 
-          photo.save(function(error){
-            if(error){ 
-              throw error;
-            } 
-            res.redirect('/upload');
-         });
-      }
-    }
-  });    
-});
+router.post('/upload/', auth.uploadFile);
 
 module.exports = router;

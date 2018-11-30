@@ -14,7 +14,8 @@ var UserSchema = new Schema({
     },
     password:{
         type: String,
-    }
+    },
+    files:[]
 });
 
 UserSchema.plugin(passportLocalMongoose);
