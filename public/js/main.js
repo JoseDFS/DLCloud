@@ -32,9 +32,8 @@ let app = {
     },
     updatePost: function (tr, tbody, data) {
         tr.innerHTML = `
-                                <td colspan="3"> 
+                                <td colspan="2"> 
                                     <form action="/api/post">
-                                        <input type="text" name="id" readonly value="${data._id}">
                                         <input type="text" name="username" value="${data.username}">
                                         <input type="text" name="email" value="${data.email}">
                                         <input type="submit" value="Save">
