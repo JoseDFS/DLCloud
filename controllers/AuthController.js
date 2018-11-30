@@ -11,6 +11,17 @@ AuthController.home = function (req, res) {
     Photo.find({}, ['path', 'caption'], { sort: { _id: -1 } }, function (err, photos) {
         res.render('index', { user: req.user, msg: req.query.msg, photolist: photos });
     });
+    /*var id_img
+    var photos= [];
+    if(req.user){
+        console.log('yey');
+        req.user.files.forEach(function(element) {
+            Photo.findOne({_id: element._id}, ['path', 'caption'], function (err, photo) {
+                photos.push(photo);
+                console.log('yey');
+            });
+        });
+    };*/
 
 };
 
