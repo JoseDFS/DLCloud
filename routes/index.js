@@ -4,6 +4,7 @@ var auth = require("../controllers/AuthController.js");
 var upload    = require('./upload');
 var mongoose  = require('mongoose');
 var Photo     = mongoose.model('Photos');
+var passport = require('passport');
 // restrict index for logged in user only
 router.get('/', auth.home);
 
@@ -17,7 +18,10 @@ router.post('/register', auth.doRegister);
 router.get('/login', auth.login);
 
 // route for login action
-router.post('/login', auth.doLogin);
+router.post('/login',
+  passport.authenticate('local', { successRedirect: '/',
+                                   failureRedirect: '/login' }));
+
 
 // route for logout action
 router.get('/logout', auth.logout);
